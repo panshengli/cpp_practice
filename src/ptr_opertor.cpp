@@ -8,5 +8,21 @@ int main()
     int *ptr = (int*)(&a + 1);
     printf("%d\n",*(a+2));
     printf("%d\n",*(ptr-1));
+    char str1[] = "abc";
+    char str2[] = "abc";
+    const char str3[] = "abc";
+    const char str4[] = "abc";
+    const char* str5 = "abc";
+    const char* str6 = "abc";
+    char* str7 = "abc";
+    char* str8 = "abc";
+    std::cout<< str1<<std::endl;
+    std::cout<< str2<<std::endl;
+    std::cout<< str3<<std::endl;
+    std::cout<< str4<<std::endl;
+    std::cout<< str5<<std::endl;
+    std::cout<< str6<<std::endl;
+    std::cout<< str7<<std::endl;
+    std::cout<< str8<<std::endl;
     return 0;
 }
