@@ -1,6 +1,9 @@
 # cpp_practice
 cpp knowledge and practice
 
+## 2020.04.28
+- ptr_array(指针数组和数组指针的使用)
+
 ## 2020.04.26
 - reinfrastructure cpp fucntion 
 - added ptr add and sub 

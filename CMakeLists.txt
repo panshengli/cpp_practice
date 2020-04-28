@@ -9,6 +9,9 @@ ADD_EXECUTABLE(call_func src/call_func.cpp)
 ADD_EXECUTABLE(static_class src/static_class.cpp)
 ADD_EXECUTABLE(sizeof src/sizeof.cpp)
 ADD_EXECUTABLE(ptr_opertor src/ptr_opertor.cpp)
+ADD_EXECUTABLE(const_ptr src/const_ptr.cpp)
+ADD_EXECUTABLE(this_ptr src/this_ptr.cpp)
+ADD_EXECUTABLE(ptr_array src/ptr_array.cpp)
 TARGET_LINK_LIBRARIES(
     cpp_practice 
 )
