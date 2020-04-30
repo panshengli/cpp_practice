@@ -12,6 +12,9 @@ ADD_EXECUTABLE(ptr_opertor src/ptr_opertor.cpp)
 ADD_EXECUTABLE(const_ptr src/const_ptr.cpp)
 ADD_EXECUTABLE(this_ptr src/this_ptr.cpp)
 ADD_EXECUTABLE(ptr_array src/ptr_array.cpp)
+ADD_EXECUTABLE(crtp_class src/crtp_class.cpp)
+ADD_EXECUTABLE(crtp_class1 src/crtp_class1.cpp)
+ADD_EXECUTABLE(static_polymorhism src/static_polymorhism.cpp)
 TARGET_LINK_LIBRARIES(
     cpp_practice 
 )
