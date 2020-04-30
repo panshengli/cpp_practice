@@ -1,6 +1,12 @@
 # cpp_practice
 cpp knowledge and practice
 
+## 2020.04.30
+- crtp_class
+- crtp_class1
+- static_class
+- static_polymorphism
+
 ## 2020.04.28
 - ptr_array(指针数组和数组指针的使用)
 
