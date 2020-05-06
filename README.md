@@ -1,6 +1,10 @@
 # cpp_practice
 cpp knowledge and practice
 
+## 2020.05.06
+- new_delete
+- malloc_new
+
 ## 2020.04.30
 - crtp_class
 - crtp_class1
