@@ -17,6 +17,7 @@ ADD_EXECUTABLE(crtp_class1 src/crtp_class1.cpp)
 ADD_EXECUTABLE(static_polymorhism src/static_polymorhism.cpp)
 ADD_EXECUTABLE(malloc_new src/malloc_new.cpp)
 ADD_EXECUTABLE(new_delete src/new_delete.cpp)
+ADD_EXECUTABLE(strcpy src/strcpy.cpp)
 TARGET_LINK_LIBRARIES(
     cpp_practice 
 )

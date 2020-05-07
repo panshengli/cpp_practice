@@ -1,6 +1,9 @@
 # cpp_practice
 cpp knowledge and practice
 
+## 2020.05.07
+- strcpy 自定义了strcpy函数，实现链式表达
+
 ## 2020.05.06
 - new_delete
 - malloc_new
