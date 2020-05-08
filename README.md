@@ -1,6 +1,9 @@
 # cpp_practice
 cpp knowledge and practice
 
+## 2020.05.08
+- memcpy 内部库的实现，利用void*来声明
+
 ## 2020.05.07
 - strcpy 自定义了strcpy函数，实现链式表达
 

@@ -18,6 +18,7 @@ ADD_EXECUTABLE(static_polymorhism src/static_polymorhism.cpp)
 ADD_EXECUTABLE(malloc_new src/malloc_new.cpp)
 ADD_EXECUTABLE(new_delete src/new_delete.cpp)
 ADD_EXECUTABLE(strcpy src/strcpy.cpp)
+ADD_EXECUTABLE(memcpy src/memcpy.cpp)
 TARGET_LINK_LIBRARIES(
     cpp_practice 
 )
