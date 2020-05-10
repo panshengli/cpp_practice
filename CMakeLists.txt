@@ -19,6 +19,7 @@ ADD_EXECUTABLE(malloc_new src/malloc_new.cpp)
 ADD_EXECUTABLE(new_delete src/new_delete.cpp)
 ADD_EXECUTABLE(strcpy src/strcpy.cpp)
 ADD_EXECUTABLE(memcpy src/memcpy.cpp)
+ADD_EXECUTABLE(get16string src/get16string.cpp)
 TARGET_LINK_LIBRARIES(
     cpp_practice 
 )
