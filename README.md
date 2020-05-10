@@ -3,6 +3,7 @@ cpp knowledge and practice
 
 ## 2020.05.10
 - get16String.cpp 把十进制数(long型)以十六进制形式输出，不能使用printf
+- strcat.cpp 函数的使用
 
 ## 2020.05.08
 - memcpy 内部库的实现，利用void*来声明

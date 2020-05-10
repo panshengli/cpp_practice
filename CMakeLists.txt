@@ -20,6 +20,7 @@ ADD_EXECUTABLE(new_delete src/new_delete.cpp)
 ADD_EXECUTABLE(strcpy src/strcpy.cpp)
 ADD_EXECUTABLE(memcpy src/memcpy.cpp)
 ADD_EXECUTABLE(get16string src/get16string.cpp)
+ADD_EXECUTABLE(strcat src/strcat.cpp)
 TARGET_LINK_LIBRARIES(
     cpp_practice 
 )
