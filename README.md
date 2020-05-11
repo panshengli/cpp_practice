@@ -1,6 +1,10 @@
 # cpp_practice
 cpp knowledge and practice
 
+## 2020.05.11
+- constructor.cpp 构造函数的内部调用问题
+- copy_constructor.cpp 拷贝构造函数的的使用
+
 ## 2020.05.10
 - get16String.cpp 把十进制数(long型)以十六进制形式输出，不能使用printf
 - strcat.cpp 函数的使用
