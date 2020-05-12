@@ -1,6 +1,9 @@
 # cpp_practice
 cpp knowledge and practice
 
+## 2020.05.12
+- added class_func.cpp 添加构造、析构、拷贝构造、复制函数的调用顺序
+
 ## 2020.05.11
 - constructor.cpp 构造函数的内部调用问题
 - copy_constructor.cpp 拷贝构造函数的的使用

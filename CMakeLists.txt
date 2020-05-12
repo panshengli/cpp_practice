@@ -23,6 +23,7 @@ ADD_EXECUTABLE(get16string src/get16string.cpp)
 ADD_EXECUTABLE(strcat src/strcat.cpp)
 ADD_EXECUTABLE(construct src/construct.cpp)
 ADD_EXECUTABLE(copy_constructure src/copy_constructure.cpp)
+ADD_EXECUTABLE(class_func src/class_func.cpp)
 TARGET_LINK_LIBRARIES(
     cpp_practice 
 )
