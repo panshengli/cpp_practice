@@ -4,6 +4,36 @@ cpp knowledge and practice
 ## 2020.05.13
 - vector_sort.cpp 二维数组自定义排序
 
+## 2020.05.12
+- added class_func.cpp 添加构造、析构、拷贝构造、复制函数的调用顺序
+
+## 2020.05.11
+- constructor.cpp 构造函数的内部调用问题
+- copy_constructor.cpp 拷贝构造函数的的使用
+
+## 2020.05.10
+- get16String.cpp 把十进制数(long型)以十六进制形式输出，不能使用printf
+- strcat.cpp 函数的使用
+
+## 2020.05.08
+- memcpy 内部库的实现，利用void*来声明
+
+## 2020.05.07
+- strcpy 自定义了strcpy函数，实现链式表达
+
+## 2020.05.06
+- new_delete
+- malloc_new
+
+## 2020.04.30
+- crtp_class
+- crtp_class1
+- static_class
+- static_polymorphism
+
+## 2020.04.28
+- ptr_array(指针数组和数组指针的使用)
+
 ## 2020.04.26
 - reinfrastructure cpp fucntion 
 - added ptr add and sub 
