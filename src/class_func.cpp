@@ -11,7 +11,7 @@ class A
         }
         ~A()
         {
-            cout<<"Desconstructor"<<endl;
+            cout<<"Deconstructor"<<endl;
             cout<<num<<endl;
         }
         A(const A &a)
@@ -33,10 +33,14 @@ int main()
     A a2(a1);
     A a3=a1;
     A &a4=a1;
-    // a1.SetNum(1);
-    // a2.SetNum(2);
-    // a3.SetNum(3);
-    // a4.SetNum(4);
+    A a5;
+    // a5 = a1;
+    a1.SetNum(1);
+    a2.SetNum(2);
+    a3.SetNum(3);
+    a4.SetNum(4);
+    a5.SetNum(5);
+
 
     return 0;
 }

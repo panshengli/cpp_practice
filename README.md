@@ -1,6 +1,9 @@
 # cpp_practice
 cpp knowledge and practice
 
+## 2020.05.13
+- added class_deconstruction.cpp 添加了析构函数
+
 ## 2020.05.12
 - added class_func.cpp 添加构造、析构、拷贝构造、复制函数的调用顺序
 
