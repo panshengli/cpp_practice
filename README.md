@@ -1,6 +1,10 @@
 # cpp_practice
 cpp knowledge and practice
 
+## 2020.05.17
+- vector_iterator.cpp 注意vector的迭代器使用用法
+- stack_queue.cpp stack 和 queue的操作用法
+
 ## 2020.05.13
 - overload.cpp 添加了<<函数重载运算符
 - logger.cpp 添加了自定义log draft，不依赖其他库
