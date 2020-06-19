@@ -31,6 +31,7 @@ ADD_EXECUTABLE(class_func src/class_func.cpp)
 ADD_EXECUTABLE(class_deconstruction src/class_deconstruction.cpp)
 ADD_EXECUTABLE(overload src/overload.cpp)
 ADD_EXECUTABLE(test_logger src/test_logger.cpp src/logger.cpp)
+ADD_EXECUTABLE(template_funct src/template_funct.cpp)
 TARGET_LINK_LIBRARIES(
     vector_sort 
     ${OpenCV_LIBRARIES} 

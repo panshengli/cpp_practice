@@ -1,6 +1,9 @@
 # cpp_practice
 cpp knowledge and practice
 
+## 2020.06.19
+- template_funct.cpp 添加了template example
+
 ## 2020.05.13
 - overload.cpp 添加了<<函数重载运算符
 - logger.cpp 添加了自定义log draft，不依赖其他库
