@@ -1,6 +1,9 @@
 # cpp_practice
 cpp knowledge and practice
 
+## 2020.07.10
+- rabin_karp.cpp 添加了srcSRC example
+
 ## 2020.06.19
 - template_funct.cpp 添加了template example
 
