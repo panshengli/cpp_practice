@@ -1,6 +1,6 @@
 CMAKE_MINIMUM_REQUIRED( VERSION 2.8 )
 PROJECT(cpp_practice)
-set(CMAKE_CXX_FLAGS "-std=c++11")
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11 -pthread")
 find_package(OpenCV 3.3 REQUIRED)
 INCLUDE_DIRECTORIES(
     include
@@ -35,8 +35,16 @@ ADD_EXECUTABLE(template_funct src/template_funct.cpp)
 ADD_EXECUTABLE(vector_iterator src/vector_iterator.cpp)
 ADD_EXECUTABLE(stack_queue src/stack_queue.cpp)
 ADD_EXECUTABLE(rabin_karp src/rabin_karp.cpp)
+ADD_EXECUTABLE(atom_thread src/atom_thread.cpp)
 TARGET_LINK_LIBRARIES(
     vector_sort 
     ${OpenCV_LIBRARIES} 
 )
+
+TARGET_LINK_LIBRARIES(
+    vector_sort 
+    pthread
+)
+
+
 

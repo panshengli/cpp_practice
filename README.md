@@ -1,6 +1,9 @@
 # cpp_practice
 cpp knowledge and practice
 
+## 2020.08.12
+- atom_thread.cpp 添加了原子操作线程
+
 ## 2020.07.10
 - rabin_karp.cpp 添加了srcSRC example
 
