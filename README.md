@@ -1,6 +1,9 @@
 # cpp_practice
 cpp knowledge and practice
 
+## 2020.11.15
+- str_compare.cpp 添加字符串比较
+
 ## 2020.08.12
 - atom_thread.cpp 添加了原子操作线程
 
