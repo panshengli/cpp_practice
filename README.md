@@ -1,6 +1,9 @@
 # cpp_practice
 cpp knowledge and practice
 
+## 2020.11.24
+- class_output.cpp 添加了构造函数等打印顺序
+
 ## 2020.11.15
 - str_compare.cpp 添加字符串比较
 

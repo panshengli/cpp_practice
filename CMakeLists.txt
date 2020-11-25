@@ -37,6 +37,7 @@ ADD_EXECUTABLE(stack_queue src/stack_queue.cpp)
 ADD_EXECUTABLE(rabin_karp src/rabin_karp.cpp)
 ADD_EXECUTABLE(atom_thread src/atom_thread.cpp)
 ADD_EXECUTABLE(str_compare src/str_compare.cpp)
+ADD_EXECUTABLE(class_output src/class_output.cpp)
 TARGET_LINK_LIBRARIES(
     vector_sort 
     ${OpenCV_LIBRARIES} 
