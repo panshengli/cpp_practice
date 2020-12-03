@@ -1,6 +1,12 @@
 # cpp_practice
 cpp knowledge and practice
 
+## 2020.12.03
+- added pointer release 添加了悬挂指针知识点
+
+## 2020.11.25
+- added c++ notes
+
 ## 2020.11.24
 - class_output.cpp 添加了构造函数等打印顺序
 

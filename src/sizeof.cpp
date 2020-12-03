@@ -34,11 +34,12 @@ class D1
 class E
 {
     public:
-        int i;
+        double i;
         int ii;
         short j;
         char ch;
         char chr;
+        char chrr;
 };
 class F
 {
