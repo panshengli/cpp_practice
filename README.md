@@ -1,6 +1,9 @@
 # cpp_practice
 cpp knowledge and practice
 
+## 2020.12.04
+- added class_sizeof 添加类中包含虚函数共有多少字节
+
 ## 2020.12.03
 - added pointer release 添加了悬挂指针知识点
 

@@ -39,6 +39,7 @@ ADD_EXECUTABLE(atom_thread src/atom_thread.cpp)
 ADD_EXECUTABLE(str_compare src/str_compare.cpp)
 ADD_EXECUTABLE(class_output src/class_output.cpp)
 ADD_EXECUTABLE(ptr_release src/ptr_release.cpp)
+ADD_EXECUTABLE(class_sizeof src/class_sizeof.cpp)
 TARGET_LINK_LIBRARIES(
     vector_sort 
     ${OpenCV_LIBRARIES} 
