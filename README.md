@@ -1,6 +1,10 @@
 # cpp_practice
 cpp knowledge and practice
 
+## 2020.12.17
+- added auto and its reference 添加了auto和auto&区别
+- added auto trans 添加了auto自动类型推导
+
 ## 2020.12.04
 - added class_sizeof 添加类中包含虚函数共有多少字节
 
