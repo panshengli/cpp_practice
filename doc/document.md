@@ -1,6 +1,6 @@
 # CPP Notes
 
-- [2020.11.25] 
+- [2020.11.25]
   1. **c++哪些可以重载？**
     - 除了类属关系运算符"."、成员指针运算符".*"、作用域运算符"::"、sizeof运算符和三目运算符"?:"
     - 以外，c++中的所有运算符都可以重载
@@ -47,6 +47,7 @@
      - 原子操作:新标准C++11，引入了原子操作,提供比mutex等锁机制更好的性能
      - 对于多线程的情况下,单个基础数据类型的数据共享安全,尽量使用原子操作代替锁机制
      - 当需要对代码块进行数据安全保护的时候,就需要选择使用锁机制了
+
 - [2020.12.18]
   1. **不能用于声明虚函数**
      - 普通函数
@@ -62,3 +63,36 @@
        - 智能指针的赋值/拷贝也不是线程安全的
          - 首先拷贝指向对象的指针，再使引用次数加减操作
          - 但是指针拷贝并不是原子操作，线程不安全，需要手动加锁解锁
+- [2020.12.22]
+  1. **Meyers singleton(目前最推荐Ｃ++单例写法)**
+  ```cpp
+  #include <iostream>
+  using namespace std;
+
+  class Singleton
+  {
+    public:
+      static Singleton& Instance()
+      {
+        static Singleton singleton;
+        return singleton;
+      }
+      void printLog(string _log)
+      {
+        cout<<_log<<endl;
+      }
+    private:
+      Singleton(){}
+      ~Singleton(){}
+      Singleton(Singleton const &){}
+      Singleton & operator=(Singleton const &){}
+  };
+
+  int main()
+  {
+    string log1 = "farewell kobe";
+    string log2 = "hello 2021";
+    Singleton::Instance().printLog(log1);
+    Singleton::Instance().printLog(log2);
+  }
+  ```

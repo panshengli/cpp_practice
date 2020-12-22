@@ -1,6 +1,11 @@
 # cpp_practice
 cpp knowledge and practice
 
+
+
+## 2020.12.22
+- added singleton 添加了单例模式
+
 ## 2020.12.17
 - added auto and its reference 添加了auto和auto&区别
 - added auto trans 添加了auto自动类型推导
