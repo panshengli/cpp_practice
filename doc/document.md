@@ -96,3 +96,106 @@
     Singleton::Instance().printLog(log2);
   }
   ```
+
+- [2020.12.23]
+  1. 手写一个智能指针接口及实现
+  ```cpp
+  #include <iostream>
+  template <typename T>
+  class SmartPointer
+  {
+      public:
+          SmartPointer(T* ptr);  // 用普通指针初始化智能指针
+          SmartPointer(SmartPointer<T>& sptr);  // 指针拷贝构造函数，新建一个指向已有对象的智能指针
+          SmartPointer<T> & operator = (SmartPointer<T>& sptr);  // 赋值构造函数
+
+          ~SmartPointer();
+          T* operator->();  // 自定义指针运算符
+          T& operator*();  // 自定义解引用运算符
+          T getCount();  // 获取计数
+
+      private:
+          int* ref_count_;  // 引用计数
+          T* ref_;  // 智能指针底层保管的指针
+  };
+
+  template <typename T>  // 用普通指针初始化时，将该指针进行封装，引用计数初始化为1
+  SmartPointer<T>::SmartPointer(T* ptr)
+      : ref_count_(new int(1)),
+        ref_(ptr)
+  {
+  }
+
+  template <typename T>  // 对普通指针拷贝，引用计数器加1，对参数进行修改，不能将参数声明为const
+  SmartPointer<T>::SmartPointer(SmartPointer<T>& sptr)
+      : ref_count_(&(++*sptr.ref_count_)),
+        ref_(sptr.red_)
+  {
+  }
+
+  template <typename T>  // rewrite "="，修改指针的指向
+  SmartPointer<T>& SmartPointer<T>::operator = (SmartPointer<T>& sptr)
+  {
+      if(this == &sptr)  // 同一个指针，直接返回
+      {
+          return *this;
+      }
+      if(--*ref_count_ == 0)  //旧对象的引用计数为1，删除旧对象
+      {
+          delete ref_count_;
+          delete ref_;
+          ref_count_ = nullptr;
+          ref_ = nullptr;
+      }
+      ref_ = sprt.ref_;
+      ref_count_ = sptr.ref_count_;
+      ++(*ref_count);  // 指针计数+1
+      return *this;
+  }
+
+  template <typename T>
+  SmartPointer<T>::~SmartPointer()
+  {
+      if(--*ref_count_ == 0)
+      {
+          delete ref_count_;
+          delete ref_;
+          ref_count_ = nullptr;
+          ref_ = nullptr;
+      }
+  }
+
+  template <typename T>
+  T* SmartPointer<T>::operator->()
+  {
+      return ref_;
+  }
+
+  template <typename T>  // 定义解引用运算符，直接返回底层指针的引用
+  T& SmartPointer<T>::operator*()
+  {
+      return *ref_;
+  }
+
+  T SmartPointer<T>::getCount()
+  {
+      return static_cast<T>(*ref_count_);
+  }
+
+  class A
+  {
+      public:
+          A() { cout << "A::A()" << endl; }
+          ~A() { cout << "A::~A()" << endl; }
+          void fun() { cout << "A::fun()" << endl; }
+  };
+
+  int main()
+  {
+      SmartPointer<A> temp(new A());
+      (*temp).fun(); //通过对象调用成员函数
+      temp->fun(); //通过指针调用成员函数
+  }
+
+  ```
+  2. 
