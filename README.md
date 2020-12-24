@@ -1,7 +1,8 @@
 # cpp_practice
 cpp knowledge and practice
 
-
+## 2020.12.23
+- added SmartPointer 自定义了智能指针类的使用
 
 ## 2020.12.22
 - added singleton 添加了单例模式

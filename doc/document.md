@@ -198,4 +198,13 @@
   }
 
   ```
-  2. 
+  - [2020.12.24]
+  1. 模板使用typename和class的区别
+     - typename和class在作为参数类型时用法一样, 没有区别
+     - typename主要用于对嵌套依赖类型进行提取. 而class没有这样的功能
+  2. c++模板的特化:
+     - 全特化：特化为绝对类型(直接为某个特定类型做特化)
+       - ```template<>　class Example<float>```
+     - 偏特化：特化为引用，指针类型　(只是对类型做了某些限定, 如Ｔ*,　偏特化为float*, double*等)
+       - ```template<typename T> class Example<T*>```
+     - 特化为另外一个类模板
