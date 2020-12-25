@@ -16,6 +16,7 @@ int main()
     const char* str6 = "abc";
     char* str7 = "abc";
     char* str8 = "abc";
+    int i=10, *p=&i;
     std::cout<< str1<<std::endl;
     std::cout<< str2<<std::endl;
     std::cout<< str3<<std::endl;
@@ -24,5 +25,6 @@ int main()
     std::cout<< str6<<std::endl;
     std::cout<< str7<<std::endl;
     std::cout<< str8<<std::endl;
+    std::cout<< "p: "<<p<<std::endl;
     return 0;
 }

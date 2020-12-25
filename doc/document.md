@@ -72,6 +72,7 @@
   class Singleton
   {
     public:
+      //　返回为引用和或指针类型
       static Singleton& Instance()
       {
         static Singleton singleton;
@@ -84,8 +85,8 @@
     private:
       Singleton(){}
       ~Singleton(){}
-      Singleton(Singleton const &){}
-      Singleton & operator=(Singleton const &){}
+      // Singleton(Singleton const &){}
+      // Singleton & operator=(Singleton const &){}
   };
 
   int main()
