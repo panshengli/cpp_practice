@@ -63,40 +63,6 @@
        - 智能指针的赋值/拷贝也不是线程安全的
          - 首先拷贝指向对象的指针，再使引用次数加减操作
          - 但是指针拷贝并不是原子操作，线程不安全，需要手动加锁解锁
-- [2020.12.22]
-  1. **Meyers singleton(目前最推荐Ｃ++单例写法)**
-  ```cpp
-  #include <iostream>
-  using namespace std;
-
-  class Singleton
-  {
-    public:
-      //　返回为引用和或指针类型
-      static Singleton& Instance()
-      {
-        static Singleton singleton;
-        return singleton;
-      }
-      void printLog(string _log)
-      {
-        cout<<_log<<endl;
-      }
-    private:
-      Singleton(){}
-      ~Singleton(){}
-      // Singleton(Singleton const &){}
-      // Singleton & operator=(Singleton const &){}
-  };
-
-  int main()
-  {
-    string log1 = "farewell kobe";
-    string log2 = "hello 2021";
-    Singleton::Instance().printLog(log1);
-    Singleton::Instance().printLog(log2);
-  }
-  ```
 
 - [2020.12.23]
   1. 手写一个智能指针接口及实现
@@ -209,3 +175,116 @@
      - 偏特化：特化为引用，指针类型　(只是对类型做了某些限定, 如Ｔ*,　偏特化为float*, double*等)
        - ```template<typename T> class Example<T*>```
      - 特化为另外一个类模板
+  
+  - [2020.12.31]
+  1. 单例模式的多线程安全
+     - 单例模式主要解决一个**全局使用的类频繁的创建和销毁**的问题
+     - 单例模式有三个要素:
+       1. 某个类只能有一个实例
+       2. 必须自行创建这个实例
+       3. 必须自行向整个系统提供这个实例
+    - 单例模式两种模式：懒汉和饿汉模式
+      - 饿汉式：**避免多线程的同步**问题，instance在类装载时就实例化，**可能会产生垃圾对象**
+      ```cpp
+      class Singleton
+      {
+          public:
+              // 该类中唯一一个public方法
+              static Singleton& getInstance()
+              {
+                  return singleton_;
+              }
+              void doSomething(){}
+          private:
+              // private构造，保证其他类对象不能new一个对象的实例
+              Singleton();
+              // 直接初始化一个示例对象
+              static Singleton singleton_ = new Singleton();
+      }
+      ```
+      - 饿汉式：**双重锁机制**实现线程安全
+      ```cpp
+      #include <mutex>
+      std::mutex mt;
+      class Singleton
+      {
+          public:
+             static Singleton& getInstance()
+             {
+                if(singleton_ == nullptr)
+                {
+                    mt.lock();
+                    if(singleton_ == nullptr)
+                    {
+                        singleton_ = new Singleton();
+                        mt.unlock();
+                        return singleton_;
+                    }
+                }
+                mt.unlock();
+                return singleton_;
+             } 
+      }
+      ```
+      - **Meyers singleton(目前最推荐Ｃ++单例写法)**
+      ```cpp
+      #include <iostream>
+      using namespace std;
+
+      class Singleton
+      {
+          public:
+              //　返回为引用和或指针类型
+              static Singleton& Instance()
+              {
+                static Singleton singleton;
+                return singleton;
+              }
+              void printLog(string _log)
+              {
+                cout<<_log<<endl;
+              }
+          private:
+              Singleton(){}
+              ~Singleton(){}
+              // Singleton(Singleton const &){}
+              // Singleton & operator=(Singleton const &){}
+      };
+
+      int main()
+      {
+          string log1 = "farewell kobe";
+          string log2 = "hello 2021";
+          Singleton::Instance().printLog(log1);
+          Singleton::Instance().printLog(log2);
+      }
+      ```
+  2. 举例其他设计模式
+     - 工厂模式：工厂模式主要**解决接口选择**的问题
+        - 创建对象的接口，让其子类自己决定实例化哪一个工厂类，使其创建过程延迟到子类进行
+        - **解耦，代码复用，更改功能容易**
+     - 观察者模式：定义对象间的一种一对多的依赖关系
+        - 当一个对象的状态发生改变时，所有依赖于它的对象都得到通知并被自动更新
+     - 装饰器模式：对已经存在的某些类进行装饰，以此来扩展一些功能，从而动态的为一个对象增加新的功能
+        - 扩展一个类的功能、动态增加功能，动态撤销
+  3. OOP的设计模式的五项原则
+     - 单一职责原则
+        - 避免相同的职责分散到不同的类中
+        - 避免一个类承担太多职责
+        - 减少类的耦合，提高类的复用性
+     - 接口隔离原则
+        - 多个专门的接口比使用单个接口好很多
+        - 一个类对另外一个类的依赖性应当是建立在最小的接口上
+        - 客户端程序不应该依赖它不需要的接口方法
+     - 开放封闭原则
+        - 在扩展性方面应该是开放的
+        - 在更改性方面应该是封闭的
+        - 核心思想就是对抽象编程，而不对具体编程
+     - 替换原则
+        - 子类型必须能够替换掉他们的父类型、并出现在父类能够出现的任何地方
+        - 父类的方法都要在子类中实现或者重写
+        - 派生类只实现其抽象类中生命的方法，而不应当给出多余的,方法定义或实现
+        - 客户端程序中只应该使用父类对象而不应当直接使用子类对象，这样可以实现运行期间绑定
+     - 依赖倒置原则
+        - 父类不能依赖子类，他们都要依赖抽象类
+        - 抽象不能依赖于具体，具体应该要依赖于抽象
