@@ -361,3 +361,18 @@
      - 多态的实现主要分为静态多态和动态多态
        - 静态多态: 主要是重载，在编译的时候就已经确定
        - 动态多态: 是用虚函数机制实现的，在运行期间动态绑定
+  - [2021.01.11]
+  1. 关于多线程问题
+     - look_guard:
+       - `std::lock_guard<std::mutex> lock(*m3x);`
+       - 构造自动锁定互斥量，退出作用域后**析构自动解锁**，避免忘记unlock操作
+       - 缺点：没有提供加锁和解锁的接口
+     - unique_guard:
+       - 内部提供unlock()和lock()机制，但需要维护锁的状态，效率比look_guar些
+       - 析构时也会自动解锁
+       - unique_lock()可以进行std::move()
+     - condition_variable
+       - 能用于阻塞一个/多个线程，直至另一线程修改共享变量（条件）并通知 condition_variable
+       - 获得std::mutex(常通过 std::lock_guard/unique_lock)
+       - 在保有锁时进行修改
+       - 在std::condition_variable上执行notify_one或notify_all(不需要为通知保有锁)
