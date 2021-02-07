@@ -368,7 +368,7 @@
        - 构造自动锁定互斥量，退出作用域后**析构自动解锁**，避免忘记unlock操作
        - 缺点：没有提供加锁和解锁的接口
      - unique_guard:
-       - 内部提供unlock()和lock()机制，但需要维护锁的状态，效率比look_guar些
+       - 内部提供unlock()和lock()机制，但需要维护锁的状态，效率比look_guard低些
        - 析构时也会自动解锁
        - unique_lock()可以进行std::move()
      - condition_variable
