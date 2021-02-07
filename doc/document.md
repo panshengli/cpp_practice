@@ -96,7 +96,7 @@
   template <typename T>  // 对普通指针拷贝，引用计数器加1，对参数进行修改，不能将参数声明为const
   SmartPointer<T>::SmartPointer(SmartPointer<T>& sptr)
       : ref_count_(&(++*sptr.ref_count_)),
-        ref_(sptr.red_)
+        ref_(sptr.ref_)
   {
   }
 
@@ -114,9 +114,9 @@
           ref_count_ = nullptr;
           ref_ = nullptr;
       }
-      ref_ = sprt.ref_;
+      ref_ = sptr.ref_;
       ref_count_ = sptr.ref_count_;
-      ++(*ref_count);  // 指针计数+1
+      ++(*ref_count_);  // 指针计数+1
       return *this;
   }
 
