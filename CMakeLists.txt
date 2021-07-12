@@ -45,6 +45,7 @@ ADD_EXECUTABLE(auto src/auto.cpp)
 ADD_EXECUTABLE(singleton1 src/singleton.cpp src/singleton1_main.cpp)
 ADD_EXECUTABLE(singleton2 src/singleton.cpp src/singleton2_main.cpp)
 ADD_EXECUTABLE(bind_test src/bind_test.cpp)
+ADD_EXECUTABLE(multi_thread_notify_all src/multi_thread_notify_all.cpp)
 TARGET_LINK_LIBRARIES(
     vector_sort 
     ${OpenCV_LIBRARIES} 
