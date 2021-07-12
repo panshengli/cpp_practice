@@ -1,6 +1,9 @@
 # cpp_practice
 cpp knowledge and practice
 
+## 2021.07.12
+- added bindTest bind用法尝试
+
 ## 2020.12.23
 - added SmartPointer 自定义了智能指针类的使用
 
